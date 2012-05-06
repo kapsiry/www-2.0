@@ -17,8 +17,8 @@ Vagrant::Config.run do |global_config|
       ipaddress = options[:ipaddress]
       
       # Use the Ubuntu 10.04 LTS base image for now
-      config.vm.box = "base"
-      config.vm.box_url = "http://files.vagrantup.com/lucid32.box"
+      config.vm.box = "debian-squeeze-32"
+      config.vm.box_url = "https://joneskoo.kapsi.fi/vagrant-debian-squeeze-32.box"
 
       config.vm.boot_mode = :headless
       config.vm.host_name = vm_name
@@ -28,10 +28,10 @@ Vagrant::Config.run do |global_config|
       config.vm.share_folder "v-www", "/srv/www", "srv-www"
 
       # Provision with Puppet
-      # config.vm.provision :puppet do |puppet|
-      #     puppet.manifests_path = "puppet"
-      #     puppet.manifest_file  = "base.pp"
-      # end
+      config.vm.provision :puppet do |puppet|
+          puppet.manifests_path = "puppet"
+          puppet.manifest_file  = "base.pp"
+      end
     end
   end
 
