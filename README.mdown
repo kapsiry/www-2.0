@@ -1,0 +1,21 @@
+# Kapsi www infrastructure 2.0 #
+
+This is a virtual machine setup for a redundant web hosting for use
+by Kapsi Internet-käyttäjät ry.
+
+Requirements:
+
+ * [VirtualBox][vbox]
+ * [Vagrant][vagrant] (for local testing)
+
+To start the set of virtual machines, run:
+
+    $ vagrant up
+
+This starts the machines as configured by the Vagrantfile:
+
+ * vhost1 (10.42.0.1)
+ * vhost2 (10.42.0.2)
+
+[vbox]: http://www.virtualbox.org/
+[vagrant]: http://vagrantup.com/
